@@ -93,4 +93,5 @@ This Next.js application can be deployed to Vercel with zero configuration:
 
 ## License
 
-MIT
+
+All rights reserved - This project was created by [r0odr1](https://github.com/r0odr1).
