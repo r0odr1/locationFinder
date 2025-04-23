@@ -1,9 +1,9 @@
 "use client";
 
-import { useEffect, useRef, useState } from 'react';
+import { reverseGeocode } from '@/lib/location-service';
 import { Location } from '@/lib/types';
 import { MapPin } from 'lucide-react';
-import { reverseGeocode } from '@/lib/location-service';
+import { useEffect, useRef, useState } from 'react';
 
 interface LocationMapProps {
   selectedLocation: Location | null;
@@ -30,7 +30,7 @@ export default function LocationMap({ selectedLocation, onLocationSelect }: Loca
         
         // Create map if it doesn't exist
         if (!leafletMapRef.current && mapRef.current) {
-          const defaultPosition = [51.505, -0.09]; // Default to London
+          const defaultPosition: [number, number] = [51.505, -0.09]; // Default to London
           
           leafletMapRef.current = L.map(mapRef.current).setView(defaultPosition, 13);
           
